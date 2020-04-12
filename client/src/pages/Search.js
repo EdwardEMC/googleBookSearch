@@ -30,18 +30,6 @@ function Search() {
       return book.id === event.target.id
     })
 
-    // console.log(toSave);
-
-    // const selectedBook = {
-    //   title: toSave[0].volumeInfo.title,
-    //   authors: toSave[0].volumeInfo.authors,
-    //   description: toSave[0].volumeInfo.description,
-    //   image: toSave[0].volumeInfo.imageLinks.smallThumbnail,
-    //   link: toSave[0].volumeInfo.infoLink
-    // }
-
-    // console.log(selectedBook);
-
     API.saveBook({
       title: toSave[0].volumeInfo.title,
       authors: toSave[0].volumeInfo.authors,

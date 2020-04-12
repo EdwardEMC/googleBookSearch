@@ -2,7 +2,6 @@ const db = require("../models");
 
 module.exports = {
   create: function(req, res) {
-    console.log(req.body,"CONTROLLER");
     db.Book
       .create(req.body)
       .then(dbModel => res.json(dbModel))
