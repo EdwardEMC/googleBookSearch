@@ -7,7 +7,6 @@ router.route("/")
 
 router.route("/:id")
   .get(searchController.findById)
-  // .put(searchController.update)
   .delete(searchController.remove);
 
 module.exports = router;

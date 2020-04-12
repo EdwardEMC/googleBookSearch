@@ -4,7 +4,11 @@ import { Container } from "../components/Container";
 function NoMatch() {
   return (
     <Container>
-      <h1>404 Page Not Found</h1>
+      <div className="jumbotron">
+        <div className="text-center">
+          <h1 className="text-center">404 Page Not Found</h1>
+        </div>
+      </div>
     </Container>
   );
 }

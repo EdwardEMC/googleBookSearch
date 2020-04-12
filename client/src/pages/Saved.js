@@ -4,7 +4,11 @@ import { Container } from "../components/Container";
 function Saved() {
   return (
     <Container>
-      <h1>Saved books Page</h1>
+      <div className="card">
+        <div className="card-header text-center">
+          <h1>Saved books Page</h1>
+        </div>
+      </div>
     </Container>
   );
 }
