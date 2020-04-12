@@ -2,7 +2,7 @@ import axios from "axios";
 
 export default {
   // Search for book
-  searchBook: function(book, apiKey) {
+  searchBook: function(book) {
     return axios.get("https://www.googleapis.com/books/v1/volumes?q=" + book + "&key=AIzaSyDC0eby2GRZvg_m-iUH0tzlFYVuwg8TiDY&max=10");
   },
   // Gets all books
@@ -18,7 +18,7 @@ export default {
     return axios.delete("/api/books/" + id);
   },
   // Saves a book to the database
-  saveBook: function(bookData) {
-    return axios.post("/api/books", bookData);
+  saveBook: function(selectedBook) {
+    return axios.post("/api/books", selectedBook);
   }
 };

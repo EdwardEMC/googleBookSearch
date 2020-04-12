@@ -6,7 +6,6 @@ function Search() {
 
   const [book, setBook] = useState();
   const [result, setResult] = useState([]);
-  const [save, setSave] = useState();
 
   function handleChange(event) {
     const search = event.target.value;
@@ -26,7 +25,30 @@ function Search() {
   }
 
   function saveResult(event) {
-    console.log(event.target);
+
+    let toSave = result.filter(book => {
+      return book.id === event.target.id
+    })
+
+    console.log(toSave);
+
+    const selectedBook = {
+      title: toSave[0].volumeInfo.title,
+      authors: toSave[0].volumeInfo.authors,
+      description: toSave[0].volumeInfo.description,
+      image: toSave[0].volumeInfo.imageLinks.smallThumbnail,
+      link: toSave[0].volumeInfo.infoLink
+    }
+
+    console.log(selectedBook);
+
+    API.saveBook(selectedBook)
+      .then(function(result) {
+        console.log(result);
+      })
+      .catch(function(err) {
+        console.log(err);
+      });
   }
 
   return (
@@ -74,7 +96,7 @@ function Search() {
                             View
                           </button>
                           &emsp;
-                          <button className="btn btn-primary" onClick={saveResult}>
+                          <button id={book.id} className="btn btn-primary" onClick={saveResult}>
                             Save
                           </button>
                         </div>
