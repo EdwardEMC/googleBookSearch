@@ -15,11 +15,9 @@ function Home() {
       </div>
       <br></br>
       <div className="text-center">
-        <p>How to use</p>
-        <p>How to use</p>
-        <p>How to use</p>
-        <p>How to use</p>
-        <p>How to use</p>
+        <p>A simple to use application to search for your favourite books or the ones you really want to read.</p>
+        <p>Click the button below to start searching, from there you can view the book from the google store or save it</p>
+        <p>if you are unsure and can decide later!</p>
       </div>
       <br></br>
       <div className="text-center">

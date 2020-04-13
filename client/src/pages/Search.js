@@ -45,6 +45,32 @@ function Search() {
       });
   }
 
+  //function incase the authors are not provided
+  function authorRender(book) {
+    if(book.volumeInfo.authors[0]) {
+      return (
+        book.volumeInfo.authors.map(author => {
+          return (
+            <p key={author} className="card-text">{author}</p>
+          )
+        })
+      )
+    }
+    else {
+      return <p>No listed authors.</p>
+    }
+  };
+
+  //function incase the imageLinks are not available
+  function imageRender(book) {
+    if(book.volumeInfo.imageLinks) {
+      return <img src={book.volumeInfo.imageLinks.smallThumbnail} className="card-img" alt="thumbnail"/>
+    }
+    else {
+      return <h4>No image available.</h4>
+    }
+  }
+
   return (
     <Container>
       <br></br>
@@ -78,7 +104,7 @@ function Search() {
                 <div className="card mb-3">
                   <div className="row no-gutters">
                     <div className="col-md-4">
-                      <img src={book.volumeInfo.imageLinks.smallThumbnail} className="card-img" alt="thumbnail"/>
+                      {imageRender(book)}
                     </div>
                     <div className="col-md-8">
                       <div className="row no-gutters card-header">
@@ -96,11 +122,7 @@ function Search() {
                         </div>
                       </div>
                       <div className="card-body">
-                        {book.volumeInfo.authors.map(author => {
-                          return (
-                            <p key={author} className="card-text">{author}</p>
-                          )
-                        })}
+                        {authorRender(book)}
                         <p className="card-text">{book.volumeInfo.description}</p>
                         <p className="card-text"><small className="text-muted">Published: {book.volumeInfo.publishedDate}</small></p>
                       </div>
