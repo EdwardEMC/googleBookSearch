@@ -15,15 +15,13 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div>
           <Navbar/>
-            <Switch>
+            {/* <Switch> */}
               <Route exact path={"/"} component={Home}/>
               <Route exact path={"/saved"} component={Saved}/>
               <Route exact path={"/search"} component={Search}/>
               {/* <Route component={NoMatch}/> */}
-            </Switch>
-        </div>
+            {/* </Switch> */}
       </Router>
     );
   }
