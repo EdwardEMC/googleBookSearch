@@ -32,8 +32,8 @@ function Saved() {
   return (
     <Container>
       <br></br>
-      <div className="card">
-        <div className="card-header text-center">
+      <div className="card bg-dark">
+        <div className="card-header text-white text-center">
           <h1>Saved books Page</h1>
         </div>
         <div className="card-body">
@@ -46,7 +46,7 @@ function Saved() {
                       <img src={book.image} className="card-img" alt="thumbnail"/>
                     </div>
                     <div className="col-md-8">
-                      <div className="row no-gutters card-header">
+                      <div className="row no-gutters card-header bg-warning">
                         <div className="col-md-8 text-left">
                           <h4 className="card-title">{book.title}</h4>
                         </div>

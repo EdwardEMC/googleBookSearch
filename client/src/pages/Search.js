@@ -58,7 +58,7 @@ function Search() {
                     {imageRender(book)}
                   </div>
                   <div className="col-md-8">
-                    <div className="row no-gutters card-header">
+                    <div className="row no-gutters card-header bg-warning">
                       <div className="col-md-8 text-left">
                         <h4 className="card-title">{book.volumeInfo.title}</h4>
                       </div>
@@ -119,7 +119,7 @@ function Search() {
   return (
     <Container>
       <br></br>
-      <div className="card">
+      <div className="card text-white bg-dark">
         <div className="card-body">
           <h1>Search Page</h1>
           <div className="card-text">
@@ -138,8 +138,8 @@ function Search() {
         </div>
       </div>
       <br></br>
-      <div className="card">
-        <div className="card-header">
+      <div className="card bg-dark">
+        <div className="card-header text-white">
           Results
         </div>
         <div className="card-body">

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import "./style.css";
 
 //Components
 import Navbar from "./components/Navbar";
