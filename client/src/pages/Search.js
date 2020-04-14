@@ -45,9 +45,54 @@ function Search() {
       });
   }
 
+  //function to render the list of results
+  function listRender(result) {
+    if(result) {
+      return (
+        result.map(book => {
+          return (
+            <div key={book.id}>
+              <div className="card mb-3">
+                <div className="row no-gutters">
+                  <div className="col-md-4">
+                    {imageRender(book)}
+                  </div>
+                  <div className="col-md-8">
+                    <div className="row no-gutters card-header">
+                      <div className="col-md-8 text-left">
+                        <h4 className="card-title">{book.volumeInfo.title}</h4>
+                      </div>
+                      <div className="col-md-4 text-right">
+                        <button className="btn btn-info" onClick={() => window.open(book.volumeInfo.infoLink, "_blank")}>
+                          View
+                        </button>
+                        &emsp;
+                        <button id={book.id} className="btn btn-primary" onClick={saveResult}>
+                          Save
+                        </button>
+                      </div>
+                    </div>
+                    <div className="card-body">
+                      {authorRender(book)}
+                      <p className="card-text">{book.volumeInfo.description}</p>
+                      <p className="card-text"><small className="text-muted">Published: {book.volumeInfo.publishedDate}</small></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )
+        })
+      )
+    }
+    else {
+      return <h1>No results found</h1>
+    }
+  }
+
   //function incase the authors are not provided
   function authorRender(book) {
-    if(book.volumeInfo.authors[0]) {
+    if(book.volumeInfo.authors) {
       return (
         book.volumeInfo.authors.map(author => {
           return (
@@ -98,40 +143,7 @@ function Search() {
           Results
         </div>
         <div className="card-body">
-          {result.map(book => {
-            return (
-              <div key={book.id}>
-                <div className="card mb-3">
-                  <div className="row no-gutters">
-                    <div className="col-md-4">
-                      {imageRender(book)}
-                    </div>
-                    <div className="col-md-8">
-                      <div className="row no-gutters card-header">
-                        <div className="col-md-8 text-left">
-                          <h4 className="card-title">{book.volumeInfo.title}</h4>
-                        </div>
-                        <div className="col-md-4 text-right">
-                          <button className="btn btn-info" onClick={() => window.open(book.volumeInfo.infoLink, "_blank")}>
-                            View
-                          </button>
-                          &emsp;
-                          <button id={book.id} className="btn btn-primary" onClick={saveResult}>
-                            Save
-                          </button>
-                        </div>
-                      </div>
-                      <div className="card-body">
-                        {authorRender(book)}
-                        <p className="card-text">{book.volumeInfo.description}</p>
-                        <p className="card-text"><small className="text-muted">Published: {book.volumeInfo.publishedDate}</small></p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )
-          })}
+          {listRender(result)}
         </div>
       </div>
     </Container>

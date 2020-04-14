@@ -8,7 +8,7 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Saved from "./pages/Saved";
 import Search from "./pages/Search";
-// import NoMatch from "./pages/NoMatch";
+import NoMatch from "./pages/NoMatch";
 
 
 class App extends Component {
@@ -16,12 +16,12 @@ class App extends Component {
     return (
       <Router>
           <Navbar/>
-            {/* <Switch> */}
+            <Switch>
               <Route exact path={"/"} component={Home}/>
               <Route exact path={"/saved"} component={Saved}/>
               <Route exact path={"/search"} component={Search}/>
-              {/* <Route component={NoMatch}/> */}
-            {/* </Switch> */}
+              <Route component={NoMatch}/>
+            </Switch>
       </Router>
     );
   }
