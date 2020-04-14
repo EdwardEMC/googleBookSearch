@@ -27,8 +27,10 @@ function Search() {
   function saveResult(event) {
 
     let toSave = result.filter(book => {
-      return book.id === event.target.id
+      return book.id === event.target.value
     })
+
+    document.getElementById(event.target.value).innerHTML="SAVED TO LIST"
 
     API.saveBook({
       title: toSave[0].volumeInfo.title,
@@ -67,10 +69,11 @@ function Search() {
                           View
                         </button>
                         &emsp;
-                        <button id={book.id} className="btn btn-primary" onClick={saveResult}>
+                        <button className="btn btn-primary" value={book.id} onClick={saveResult}>
                           Save
                         </button>
                       </div>
+                      <p id={book.id}></p>
                     </div>
                     <div className="card-body">
                       {authorRender(book)}
