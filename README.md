@@ -9,6 +9,9 @@ The application is very simple as a user enters on the landing page there is a b
 
 These results can be saved and or viewed. If the view button is clicked they will be taken to the online store from which it can be bought. If saved, it will be saved on the database for a time in the future or if they decide against getting it they can delete it from their saved list.
 
+# Deployed
+https://assignment21-googlebooksearch.herokuapp.com/
+
 # Built with
 Bootstrap
 React
